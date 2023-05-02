@@ -1,5 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700;800&display=swap");
-
+@import url("https://fonts.googleapis.com/css2?family=PT+Serif&family=Poppins:wght@300;400;500;700;800&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -164,4 +163,34 @@ body {
 .links-active ul li:hover {
   transform: scale(1.1);
   color: var(--clr-accent);
+}
+
+/*//////////////////////HOME////////////////////*/
+
+.home-main {
+  height: 88vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  gap: 1rem;
+}
+h1 {
+  font-size: 4rem;
+  font-weight: var(--fw-extra-bold);
+  color: var(--clr-light);
+  line-height: 3.5rem;
+}
+
+p {
+  font-family: PT Serif;
+  font-size: 1.3rem;
+  color: var(--clr-light);
+}
+
+@media screen and (max-width: 768px) {
+  .home-main {
+    align-items: center;
+    justify-content: center;
+  }
 }

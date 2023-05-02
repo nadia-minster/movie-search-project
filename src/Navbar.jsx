@@ -9,15 +9,15 @@ const Navbar = () => {
 
   const NavigationStyling = () => {
     if (isMobile && isOpen) {
-      return "links-mobile links-active";
+      return "links-mobile links-active active";
     } else if (isMobile) {
       return "links-mobile";
     } else return "links";
   };
 
   const navigation = (
-    <nav className={`${isOpen && isMobile ? "active" : "navigation"}`}>
-      <ul className={NavigationStyling()}>
+    <nav className={NavigationStyling()}>
+      <ul>
         <li>About Us</li>
         <li>Contact</li>
         <li>Saved Movies</li>

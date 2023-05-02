@@ -15,6 +15,7 @@
   --clr-light: #fff;
   --clr-accent: #f15bb5;
   --clr-purple: #5215ff;
+  --clr-dark-purple: #3a1898;
 
   --fw-light: 300;
   --fw-regular: 500;
@@ -63,18 +64,9 @@ body {
 .main-navbar {
   width: 100%;
   height: 90px;
-  padding-top: 25px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-}
-
-.navigation ul {
-  display: flex;
-  align-items: center;
-  color: #fff;
-  font-weight: var(--fw-regular);
-  gap: 24px;
 }
 
 .navigation ul li {
@@ -85,24 +77,14 @@ body {
 .navigation ul li:hover {
   color: var(--clr-accent);
 }
-/* */
-
-.screen-2 {
-  margin-top: 10rem;
-}
 
 .hamburger {
-  width: 4rem;
-  height: 4rem;
+  width: 3rem;
+  height: 3rem;
   position: sticky;
-  top: 2%;
-  left: 75%;
-
   display: flex;
   align-items: center;
   justify-content: center;
-  align-self: flex-start;
-
   border-radius: 50%;
   cursor: pointer;
   z-index: 10;
@@ -111,24 +93,18 @@ body {
   color: var(--clr-light);
 }
 
-.screen-2 {
-  position: relative;
-  width: 300px;
-  height: 500px;
-  margin-top: 500px;
-  background-color: transparent;
-  border: 2px solid rgb(255, 255, 255);
-  overflow: hidden;
+.icon {
+  width: 1rem;
+  height: 1rem;
 }
 
-.content {
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  right: 0;
   width: 100%;
   height: 100%;
-  overflow-y: auto;
-  overflow-x: hidden;
-  position: absolute;
-
-  background-color: #ab4bab;
+  background-color: transparent;
 }
 
 nav {
@@ -139,13 +115,9 @@ nav {
   top: 0;
 }
 
-.content {
-  top: 0;
-  background-color: #222;
-}
 nav {
-  background-color: var(--clr-purple);
-  transition: 0.3s ease-in;
+  background: var(--clr-dark-purple);
+  transition: 0.5s ease-in;
   clip-path: circle(0px at 84.75% 6.5%);
   display: flex;
   align-items: center;
@@ -157,16 +129,25 @@ nav {
   clip-path: circle(150% at 84.75% 6.5%);
 }
 
-ul {
+.links-mobile ul {
   text-align: center;
   opacity: 0;
   transition: 0.3 ease-in;
 }
+
+.links-mobile ul {
+  display: flex;
+  align-items: center;
+  color: #fff;
+  font-weight: var(--fw-regular);
+  gap: 24px;
+}
+
 .links-active {
   opacity: 1;
 }
 
-li {
+.links-mobile ul li {
   font-family: sans-serif;
   text-shadow: 1px 1px 2px black;
   font-size: 3rem;
@@ -174,7 +155,7 @@ li {
   letter-spacing: 0.5rem;
   transition: 0.3 ease-in;
 }
-li:hover {
+.links-mobile ul li:hover {
   transform: scale(1.25);
   color: var(--clr-purple);
 }

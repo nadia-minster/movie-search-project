@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useMediaQuery } from "react-responsive";
 import { FaBars, FaTimes } from "react-icons/fa";
+import { Link } from "react-router-dom";
 import logo from "./assets/images/logo.png";
 
 const Navbar = () => {
@@ -28,7 +29,9 @@ const Navbar = () => {
 
   return (
     <section className="main-navbar main">
-      <img src={logo} alt="logo" />
+      <Link to="/">
+        <img src={logo} alt="logo" />
+      </Link>
       {!isMobile ? (
         navigation
       ) : (

@@ -33,14 +33,14 @@ const Navbar = () => {
         navigation
       ) : (
         <div>
-          <div class="hamburger hb-2" onClick={() => setIsOpen(!isOpen)}>
+          <div className="hamburger hb-2" onClick={() => setIsOpen(!isOpen)}>
             {!isOpen ? (
               <FaBars className="icon" />
             ) : (
               <FaTimes className="icon" />
             )}
           </div>
-          <div class="mobile-menu">{navigation}</div>
+          <div className="mobile-menu">{navigation}</div>
         </div>
       )}
     </section>

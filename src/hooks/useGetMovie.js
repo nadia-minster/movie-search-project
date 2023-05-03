@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import axiow from "axios";
+import axios from "axios";
 
 const useFetch = (year, genre) => {
   const [movies, setMovies] = useState([]);

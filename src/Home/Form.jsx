@@ -1,19 +1,22 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import useGetGenre from "../hooks/useGetGenre";
 import { useNavigate } from "react-router-dom";
 import { FaArrowRight } from "react-icons/fa";
 
 const Form = (props) => {
   const navigate = useNavigate();
-  const genres = useGetGenre();
+  const { genres } = useGetGenre();
 
-  const selectGenres = genres?.map((genre) => {
-    return (
-      <option value={genre.name} key={genre.id}>
-        {genre.name}
-      </option>
-    );
-  });
+  const selectGenres =
+    genres &&
+    Array.isArray(genres) &&
+    genres.map((genre) => {
+      return (
+        <option value={genre.id} key={genre.id} id="genre">
+          {genre.name}
+        </option>
+      );
+    });
 
   const handleClick = () => {
     return navigate("/result");
@@ -37,7 +40,7 @@ const Form = (props) => {
         className="form-input"
         onChange={(e) => props.setGenre(e.target.value)}
       >
-        {genres && selectGenres}
+        {selectGenres}
       </select>
       <button className="btn btn-input" onClick={handleClick}>
         TOP 3 IMDB <FaArrowRight className="arrow-icon" />

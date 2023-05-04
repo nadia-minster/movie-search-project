@@ -7,7 +7,7 @@ import "./index.css";
 
 function App() {
   const [year, setYear] = useState(2023);
-  const [genre, setGenre] = useState("action");
+  const [genre, setGenre] = useState(1);
   return (
     <Routes>
       <Route path="/" element={<SharedLayout />}>

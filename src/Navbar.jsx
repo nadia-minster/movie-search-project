@@ -29,7 +29,7 @@ const Navbar = () => {
 
   return (
     <section className="main-navbar main">
-      <Link to="/">
+      <Link to="/" className="logo">
         <img src={logo} alt="logo" />
       </Link>
       {!isMobile ? (

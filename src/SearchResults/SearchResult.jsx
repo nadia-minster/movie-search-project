@@ -2,9 +2,8 @@ import React from "react";
 import useGetMovie from "../hooks/useGetMovie";
 
 const SearchResult = (props) => {
-  const movies = useGetMovie(props.year, props.genre).slice(0, 3);
+  const movies = useGetMovie(1978, 1).slice(0, 3);
   const imagePath = "https://image.tmdb.org/t/p/original";
-
   console.log(movies);
   return (
     <div>
@@ -12,7 +11,7 @@ const SearchResult = (props) => {
         return (
           <div className="single-movie">
             <img
-              classname="movie-poster"
+              className="movie-poster"
               src={`${imagePath}${movie.poster_path}`}
             />
           </div>

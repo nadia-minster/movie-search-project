@@ -10,7 +10,7 @@ const useFetch = () => {
       const response = await axios.get(
         `https://api.themoviedb.org/3/genre/movie/list?api_key=${apiKey}&language=en-US`
       );
-      setGenres(response.data.genres);
+      setGenres(response.data);
     };
     fetchGenres();
   }, []);

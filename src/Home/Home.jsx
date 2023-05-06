@@ -9,7 +9,11 @@ const Home = (props) => {
       {!isSearchActive ? (
         <HomeCTA setIsSearchActive={setIsSearchActive} />
       ) : (
-        <Form setYear={props.setYear} setGenre={props.setGenre} />
+        <Form
+          setYear={props.setYear}
+          setGenre={props.setGenre}
+          setGenreName={props.setGenreName}
+        />
       )}
     </div>
   );

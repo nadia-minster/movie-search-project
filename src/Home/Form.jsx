@@ -7,19 +7,22 @@ const Form = (props) => {
   const navigate = useNavigate();
   const { genres } = useGetGenre();
 
-  const selectGenres =
-    genres &&
-    Array.isArray(genres) &&
-    genres.map((genre) => {
-      return (
-        <option value={genre.id} key={genre.id} id="genre">
-          {genre.name}
-        </option>
-      );
-    });
+  const selectGenres = genres?.map((genre) => {
+    return (
+      <option value={genre.id} key={genre.id} id="genre">
+        {genre.name}
+      </option>
+    );
+  });
 
   const handleClick = () => {
     return navigate("/result");
+  };
+
+  const handleGenreChange = (e) => {
+    props.setGenre(e.target.value);
+    const name = genres.filter((item) => item.id.toString() === e.target.value);
+    props.setGenreName(name[0].name);
   };
 
   return (
@@ -38,7 +41,7 @@ const Form = (props) => {
       <select
         id="genre"
         className="form-input"
-        onChange={(e) => props.setGenre(e.target.value)}
+        onChange={(e) => handleGenreChange(e)}
       >
         {selectGenres}
       </select>

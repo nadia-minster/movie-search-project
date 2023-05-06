@@ -2,11 +2,13 @@ import React from "react";
 import useGetMovie from "../hooks/useGetMovie";
 
 const SearchResult = (props) => {
-  const movies = useGetMovie(1978, 1).slice(0, 3);
+  const movies = useGetMovie(props.year, props.genre).slice(0, 3);
+  console.log(movies);
   const imagePath = "https://image.tmdb.org/t/p/original";
   console.log(movies);
   return (
     <div>
+      <h2>{`Here are TOP 3 ${props.genreName} movies from ${props.year}.`}</h2>
       {movies?.map((movie) => {
         return (
           <div className="single-movie">

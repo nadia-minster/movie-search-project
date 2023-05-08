@@ -16,6 +16,10 @@ const SearchResult = (props) => {
               className="movie-poster"
               src={`${imagePath}${movie.poster_path}`}
             />
+            <div className="single-movie-text">
+              <h4>{movie.original_title}</h4>
+              <p className="single-movie-p">{movie.overview}</p>
+            </div>
           </div>
         );
       })}

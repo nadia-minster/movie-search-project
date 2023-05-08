@@ -8,7 +8,7 @@ import "./index.css";
 function App() {
   const [year, setYear] = useState("2023");
   const [genre, setGenre] = useState(36);
-  const [genreName, setGenreName] = useState();
+  const [genreName, setGenreName] = useState("Action");
 
   return (
     <Routes>

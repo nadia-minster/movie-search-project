@@ -26,7 +26,7 @@ const Form = (props) => {
   };
 
   return (
-    <div className="home-main form-test">
+    <div className={`home-main form-test ${props.isOpen && "hidden"}`}>
       <h1>Begin your search!</h1>
       <label htmlFor="year">Enter a Year:</label>
       <input

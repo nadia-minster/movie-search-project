@@ -5,14 +5,15 @@ import Form from "./Form";
 const Home = (props) => {
   const [isSearchActive, setIsSearchActive] = useState(false);
   return (
-    <div className="main">
+    <div className="main home-main">
       {!isSearchActive ? (
-        <HomeCTA setIsSearchActive={setIsSearchActive} />
+        <HomeCTA setIsSearchActive={setIsSearchActive} isOpen={props.isOpen} />
       ) : (
         <Form
           setYear={props.setYear}
           setGenre={props.setGenre}
           setGenreName={props.setGenreName}
+          isOpen={props.isOpen}
         />
       )}
     </div>

@@ -11,7 +11,7 @@ const HomeCTA = (props) => {
         scrolling and hello to movie night done right!
       </p>
       <button
-        className="btn btn-main"
+        className={`btn btn-main ${props.isOpen && "hidden"}`}
         onClick={() => props.setIsSearchActive(true)}
       >
         Begin your search

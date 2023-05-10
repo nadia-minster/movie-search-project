@@ -1,11 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 import { useMediaQuery } from "react-responsive";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import logo from "./assets/images/logo.png";
 
-const Navbar = () => {
-  const [isOpen, setIsOpen] = useState(false);
+const Navbar = ({ isOpen, setIsOpen }) => {
   const isMobile = useMediaQuery({ query: "(max-width: 768px)" });
 
   const NavigationStyling = () => {
@@ -35,7 +34,7 @@ const Navbar = () => {
       {!isMobile ? (
         navigation
       ) : (
-        <div>
+        <div className="mobile">
           <div className="hamburger hb-2" onClick={() => setIsOpen(!isOpen)}>
             {!isOpen ? (
               <FaBars className="icon" />

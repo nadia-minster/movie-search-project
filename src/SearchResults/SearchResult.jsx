@@ -7,8 +7,15 @@ const SearchResult = (props) => {
   const imagePath = "https://image.tmdb.org/t/p/original";
   console.log(movies);
   return (
-    <div>
-      <h2>{`Here are TOP 3 ${props.genreName} movies from ${props.year}.`}</h2>
+    <div className="result-page">
+      <div className="result-heading">
+        <h2>{`Here are TOP 3 ${props.genreName} movies from ${props.year}.`}</h2>
+        <h3>
+          Discover best rated movies of your chosen genre. You can save them to
+          access them later.
+        </h3>
+      </div>
+
       {movies?.map((movie) => {
         return (
           <div className="single-movie">
@@ -17,6 +24,7 @@ const SearchResult = (props) => {
               src={`${imagePath}${movie.poster_path}`}
             />
             <div className="single-movie-text">
+              <h5>{movie.vote_average}</h5>
               <h4>{movie.original_title}</h4>
               <p className="single-movie-p">{movie.overview}</p>
             </div>

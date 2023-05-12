@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { FaArrowRight } from "react-icons/fa";
 
 const Form = (props) => {
+  const [decade, setDecade] = useState("1990");
   const navigate = useNavigate();
   const { genres } = useGetGenre();
 
@@ -18,13 +19,27 @@ const Form = (props) => {
   const selectDecades = [];
   for (let i = 1900; i <= 2020; i += 10) {
     selectDecades.push(
-      <option value={decade.id} key={decade.id} id="decade">
+      <option value={i} key={i} id="decade">
         {`${i}s`}
       </option>
     );
   }
 
-  console.log(selectDecades);
+  const selectYears = [];
+  for (let i = 0; i <= 9; i++) {
+    let year = `${decade[0]}${decade[1]}${decade[2]}${i}`;
+    selectYears.push(
+      <option value={year} key={year} id="year">
+        {year}
+      </option>
+    );
+  }
+
+  const handleGenreChange = (e) => {
+    props.setGenre(e.target.value);
+    const name = genres.filter((item) => item.id.toString() === e.target.value);
+    props.setGenreName(name[0].name);
+  };
 
   const handleClick = () => {
     return navigate("/result");
@@ -33,17 +48,19 @@ const Form = (props) => {
   return (
     <div className={`home-main form-test ${props.isOpen && "hidden"}`}>
       <h1>Begin your search!</h1>
-      <label htmlFor="year">Enter a Year:</label>
-      <input
-        type="number"
-        min="1895"
-        max="2023"
+      <select
+        id="decade"
         className="form-input"
-        placeholder="2023"
-        onChange={(e) => props.setYear(e.target.value)}
-      />
-      <select id="decade" className="form-input">
+        onChange={(e) => setDecade(e.target.value)}
+      >
         {selectDecades}
+      </select>
+      <select
+        id="year"
+        className="form-input"
+        onChange={(e) => props.setYear(e.target.value)}
+      >
+        {selectYears}
       </select>
       <label htmlFor="genre">Select a Genre:</label>
       <select

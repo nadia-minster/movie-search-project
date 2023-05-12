@@ -15,14 +15,19 @@ const Form = (props) => {
     );
   });
 
+  const selectDecades = [];
+  for (let i = 1900; i <= 2020; i += 10) {
+    selectDecades.push(
+      <option value={decade.id} key={decade.id} id="decade">
+        {`${i}s`}
+      </option>
+    );
+  }
+
+  console.log(selectDecades);
+
   const handleClick = () => {
     return navigate("/result");
-  };
-
-  const handleGenreChange = (e) => {
-    props.setGenre(e.target.value);
-    const name = genres.filter((item) => item.id.toString() === e.target.value);
-    props.setGenreName(name[0].name);
   };
 
   return (
@@ -37,6 +42,9 @@ const Form = (props) => {
         placeholder="2023"
         onChange={(e) => props.setYear(e.target.value)}
       />
+      <select id="decade" className="form-input">
+        {selectDecades}
+      </select>
       <label htmlFor="genre">Select a Genre:</label>
       <select
         id="genre"

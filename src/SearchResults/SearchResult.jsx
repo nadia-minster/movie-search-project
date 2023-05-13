@@ -17,15 +17,21 @@ const SearchResult = (props) => {
       </div>
 
       {movies?.map((movie) => {
+        console.log(movie);
         return (
           <div className="single-movie">
+            <img
+              className="backdrop"
+              alt={movie.title}
+              src={`${imagePath}${movie.backdrop_path}`}
+            />
             <img
               className="movie-poster"
               src={`${imagePath}${movie.poster_path}`}
             />
             <div className="single-movie-text">
               <h5>{movie.vote_average}</h5>
-              <h4>{movie.original_title}</h4>
+              <h4>{movie.title}</h4>
               <p className="single-movie-p">{movie.overview}</p>
             </div>
           </div>

@@ -8,6 +8,14 @@ const Form = (props) => {
   const navigate = useNavigate();
   const { genres } = useGetGenre();
 
+  const randomYear = () => {
+    return 1900 + Math.floor(Math.random() * 123);
+  };
+
+  const randomGenre = () => {
+    return Math.floor(Math.random() * 19);
+  };
+
   const selectGenres = genres?.map((genre) => {
     return (
       <option value={genre.id} key={genre.id} id="genre">
@@ -41,6 +49,14 @@ const Form = (props) => {
     props.setGenreName(name[0].name);
   };
 
+  const handleRandomChoice = () => {
+    props.setYear(1900 + Math.floor(Math.random() * 123));
+    const randomGenreIndex = Math.floor(Math.random() * 19);
+    props.setGenre(genres[randomGenreIndex].id);
+    props.setGenreName(genres[randomGenreIndex].name);
+    return navigate("/result");
+  };
+
   const handleClick = () => {
     return navigate("/result");
   };
@@ -48,32 +64,39 @@ const Form = (props) => {
   return (
     <div className={`home-main form-test ${props.isOpen && "hidden"}`}>
       <h1>Begin your search!</h1>
-      <select
-        id="decade"
-        className="form-input"
-        onChange={(e) => setDecade(e.target.value)}
-      >
-        {selectDecades}
-      </select>
-      <select
-        id="year"
-        className="form-input"
-        onChange={(e) => props.setYear(e.target.value)}
-      >
-        {selectYears}
-      </select>
+
       <label htmlFor="genre">Select a Genre:</label>
       <select
         id="genre"
-        className="form-input"
+        className="form-input genre"
         onChange={(e) => handleGenreChange(e)}
       >
         {selectGenres}
       </select>
+      <div className="year-and-decade">
+        <select
+          id="decade"
+          className="form-input year-2"
+          onChange={(e) => setDecade(e.target.value)}
+        >
+          {selectDecades}
+        </select>
+        <select
+          id="year"
+          className="form-input year-1"
+          onChange={(e) => props.setYear(e.target.value)}
+        >
+          {selectYears}
+        </select>
+      </div>
+
       <button className="btn btn-input" onClick={handleClick}>
         TOP 3 IMDB <FaArrowRight className="arrow-icon" />
       </button>
-      <button className="btn-no-background btn-input">
+      <button
+        className="btn-no-background btn-input"
+        onClick={handleRandomChoice}
+      >
         ...or surprise me! <FaArrowRight className="arrow-icon" />
       </button>
     </div>

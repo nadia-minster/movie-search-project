@@ -20,8 +20,9 @@ const Navbar = ({ isOpen, setIsOpen }) => {
       <ul>
         <li>About Us</li>
         <li>Contact</li>
-        <li>Saved Movies</li>
-        <button className="btn">Login</button>
+        <Link className="btn" to="/saved">
+          Saved Movies
+        </Link>
       </ul>
     </nav>
   );

@@ -1,11 +1,11 @@
 import React from "react";
 import useGetMovie from "../hooks/useGetMovie";
+import { FaHeart } from "react-icons/fa";
 
 const SearchResult = (props) => {
   const movies = useGetMovie(props.year, props.genre).slice(0, 3);
-  console.log(movies);
   const imagePath = "https://image.tmdb.org/t/p/original";
-  console.log(movies);
+
   return (
     <div className="result-page">
       <div className="result-heading">
@@ -30,10 +30,16 @@ const SearchResult = (props) => {
               src={`${imagePath}${movie.poster_path}`}
             />
             <div className="single-movie-text">
-              <h5>{movie.vote_average}</h5>
+              <h5>IMDB rating: {movie.vote_average}</h5>
               <h4>{movie.title}</h4>
               <p className="single-movie-p">{movie.overview}</p>
             </div>
+            <button
+              className="btn btn-result"
+              onClick={props.setSavedMovie(movie.title)}
+            >
+              Save <FaHeart className="heart-icon" />
+            </button>
           </div>
         );
       })}

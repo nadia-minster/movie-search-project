@@ -384,13 +384,25 @@ select {
 
 .single-movie-p {
   font-size: 1rem;
-  width: 75%;
+  width: 100%;
+  flex-grow: 1;
   z-index: 2;
 }
 
 h5,
 h4 {
   z-index: 2;
+}
+
+.btn-result {
+  z-index: 9;
+  align-self: end;
+  justify-self: center;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 12px;
 }
 
 @media screen and (max-width: 768px) {

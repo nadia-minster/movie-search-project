@@ -3,6 +3,7 @@ import { Routes, Route } from "react-router-dom";
 import Home from "./Home/Home";
 import SharedLayout from "./SharedLayout";
 import SearchResult from "./SearchResults/SearchResult";
+import SavedMovies from "./SavedMovies";
 import "./index.css";
 
 function App() {
@@ -10,6 +11,7 @@ function App() {
   const [genre, setGenre] = useState(36);
   const [genreName, setGenreName] = useState("Action");
   const [isOpen, setIsOpen] = useState(false);
+  const [savedMovie, setSavedMovie] = useState([]);
 
   return (
     <Routes>
@@ -31,7 +33,21 @@ function App() {
         <Route
           path="result"
           element={
-            <SearchResult year={year} genre={genre} genreName={genreName} />
+            <SearchResult
+              year={year}
+              genre={genre}
+              genreName={genreName}
+              setSavedMovie={setSavedMovie}
+            />
+          }
+        />
+        <Route
+          path="saved"
+          element={
+            <SavedMovies
+              savedMovie={savedMovie}
+              setSavedMovie={setSavedMovie}
+            />
           }
         />
       </Route>

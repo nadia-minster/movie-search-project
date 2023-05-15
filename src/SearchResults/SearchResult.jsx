@@ -3,8 +3,12 @@ import useGetMovie from "../hooks/useGetMovie";
 import { FaHeart } from "react-icons/fa";
 
 const SearchResult = (props) => {
-  const movies = useGetMovie(props.year, props.genre).slice(0, 3);
+  const { movies, loading } = useGetMovie(props.year, props.genre);
+  const resultMovies = movies.slice(0, 3);
+  console.log(loading);
   const imagePath = "https://image.tmdb.org/t/p/original";
+
+  const skeleton = {};
 
   return (
     <div className="result-page">
@@ -16,10 +20,9 @@ const SearchResult = (props) => {
         </h3>
       </div>
 
-      {movies?.map((movie) => {
-        console.log(movie);
+      {resultMovies?.map((movie) => {
         return (
-          <div className="single-movie">
+          <div className="single-movie" key={movie.title}>
             <img
               className="backdrop"
               alt={movie.title}
@@ -36,7 +39,7 @@ const SearchResult = (props) => {
             </div>
             <button
               className="btn btn-result"
-              onClick={props.setSavedMovie(movie.title)}
+              onClick={() => props.setSavedMovie([...props.savedMovie, movie])}
             >
               Save <FaHeart className="heart-icon" />
             </button>

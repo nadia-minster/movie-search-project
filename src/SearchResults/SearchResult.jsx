@@ -21,7 +21,7 @@ const SearchResult = () => {
       </div>
 
       {resultMovies?.map((movie) => {
-        return <MovieCard movie={movie} key={movie.title} />;
+        return <MovieCard movie={movie} key={movie.title} button="save" />;
       })}
     </div>
   );

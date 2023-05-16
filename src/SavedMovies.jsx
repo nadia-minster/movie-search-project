@@ -1,7 +1,13 @@
 import React from "react";
+import { useGlobalContext } from "./context";
+import MovieCard from "./MovieCard";
 
-const SavedMovies = (props) => {
-  console.log(props.savedMovie);
+const SavedMovies = () => {
+  const { savedMovie } = useGlobalContext();
+  const savedMovies = savedMovie?.map((movie) => {
+    return <MovieCard movie={movie} key={movie.title} />;
+  });
+
   return (
     <div className="result-page">
       <div className="result-heading">
@@ -11,6 +17,7 @@ const SavedMovies = (props) => {
           access them later.
         </h3>
       </div>
+      {savedMovies}
     </div>
   );
 };

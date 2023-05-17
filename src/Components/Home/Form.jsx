@@ -8,14 +8,6 @@ const Form = (props) => {
   const navigate = useNavigate();
   const { genres } = useGetGenre();
 
-  const randomYear = () => {
-    return 1900 + Math.floor(Math.random() * 123);
-  };
-
-  const randomGenre = () => {
-    return Math.floor(Math.random() * 19);
-  };
-
   const selectGenres = genres?.map((genre) => {
     return (
       <option value={genre.id} key={genre.id} id="genre">
@@ -25,6 +17,11 @@ const Form = (props) => {
   });
 
   const selectDecades = [];
+  selectDecades.push(
+    <option value="0" key="0" id="year">
+      Decade
+    </option>
+  );
   for (let i = 1900; i <= 2020; i += 10) {
     selectDecades.push(
       <option value={i} key={i} id="decade">
@@ -34,6 +31,11 @@ const Form = (props) => {
   }
 
   const selectYears = [];
+  selectYears.push(
+    <option value="0" key="0" id="year">
+      Year
+    </option>
+  );
   for (let i = 0; i <= 9; i++) {
     let year = `${decade[0]}${decade[1]}${decade[2]}${i}`;
     selectYears.push(

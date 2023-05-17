@@ -1,14 +1,14 @@
-import React from "react";
+import { useState } from "react";
 import useGetMovie from "../hooks/useGetMovie";
 import { useGlobalContext } from "../context";
 import MovieCard from "../MovieCard";
+import SkeletonLoad from "../SkeletonLoad";
 
 const SearchResult = () => {
   const { year, genre, genreName } = useGlobalContext();
   const { movies, loading } = useGetMovie(year, genre);
   const resultMovies = movies.slice(0, 3);
-
-  const skeleton = {};
+  console.log(loading);
 
   return (
     <div className="result-page">
@@ -19,10 +19,11 @@ const SearchResult = () => {
           access them later.
         </h3>
       </div>
-
-      {resultMovies?.map((movie) => {
-        return <MovieCard movie={movie} key={movie.title} button="save" />;
-      })}
+      {loading
+        ? Array(3).map(() => <SkeletonLoad />)
+        : resultMovies?.map((movie) => {
+            return <MovieCard movie={movie} key={movie.title} button="save" />;
+          })}
     </div>
   );
 };

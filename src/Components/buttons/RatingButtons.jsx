@@ -1,9 +1,19 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
-const RatingButtons = () => {
+const RatingButtons = ({ movie }) => {
   const [rate, setRate] = useState();
   const rating = Array.from({ length: 10 }, (_, index) => index + 1);
 
+  // useEffect(() => {
+  //   localStorage.setItem("rate", JSON.stringify(rate));
+  // }, [rate]);
+
+  // useEffect(() => {
+  //   const score = localStorage.getItem("rate");
+  //   if (score) {
+  //     setRate(JSON.parse(score));
+  //   }
+  // }, []);
   const handleRate = (e) => {
     setRate(e.target.value);
   };

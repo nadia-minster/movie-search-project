@@ -13,7 +13,7 @@ const MovieCard = ({ movie, button }) => {
   if (button === "save") {
     displayButton = <SaveMovieButton movie={movie} />;
   } else if (button === "rating") {
-    displayButton = <RatingButtons movie={movie} />;
+    displayButton = <RatingButtons movie={movie.title} />;
   } else if (button === "watch-or-delete") {
     displayButton = (
       <div>

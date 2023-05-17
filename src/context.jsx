@@ -13,8 +13,12 @@ const AppContext = ({ children }) => {
 
   useEffect(() => {
     const savedMovies = localStorage.getItem("savedMovies");
+    const watchedMovies = localStorage.getItem("watched");
     if (savedMovies) {
       setSavedMovie(JSON.parse(savedMovies));
+    }
+    if (watchedMovies) {
+      setWatched(JSON.parse(watchedMovies));
     }
   }, []);
 

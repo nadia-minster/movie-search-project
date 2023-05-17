@@ -1,9 +1,10 @@
 import { Routes, Route } from "react-router-dom";
-import Home from "./Home/Home";
-import SharedLayout from "./SharedLayout";
-import SearchResult from "./SearchResults/SearchResult";
-import SavedMovies from "./SavedMovies";
-import "./index.css";
+import Home from "./Components/Home/Home";
+import SharedLayout from "./Components/SharedLayout";
+import SearchResult from "./Components/SearchResult";
+import SavedMovies from "./Components/SavedMovies";
+import Watched from "./Components/Watched";
+import "./style/index.css";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
         <Route index element={<Home />} />
         <Route path="result" element={<SearchResult />} />
         <Route path="saved" element={<SavedMovies />} />
+        <Route path="watched" element={<Watched />} />
       </Route>
     </Routes>
   );

@@ -1,15 +1,16 @@
-import React from "react";
-import { useGlobalContext } from "./context";
+import { useGlobalContext } from "../context";
 import MovieCard from "./MovieCard";
 
 const SavedMovies = () => {
   const { savedMovie } = useGlobalContext();
   const savedMovies = savedMovie?.map((movie) => {
-    return <MovieCard movie={movie} key={movie.title} />;
+    return (
+      <MovieCard movie={movie} key={movie.title} button={"watch-or-delete"} />
+    );
   });
 
   return (
-    <div className="result-page">
+    <div className="container-page">
       <div className="result-heading">
         <h2>Saved Movies</h2>
         <h3>

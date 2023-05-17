@@ -336,7 +336,7 @@ select {
 }
 
 /*//////////////////////SEARCH RESULT ////////////////////*/
-.result-page {
+.container-page {
   width: 100vw;
   margin-left: 0;
   min-height: 100vh;
@@ -512,8 +512,8 @@ h4 {
 }
 
 .button-placeholder {
-  width: 100px;
-  height: 50px;
+  width: 120px;
+  height: 40px;
   margin-top: 20px;
   border-radius: 10px;
 }
@@ -525,4 +525,26 @@ h4 {
   100% {
     background: hsl(200, 20%, 95%);
   }
+}
+
+/*//////////////////////RATING ////////////////////*/
+.rating-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3px;
+}
+.rating-btn {
+  border-radius: 35px;
+  display: grid;
+  place-content: center;
+  width: 40px;
+  height: 40px;
+}
+
+.btn-disabled {
+  background: #f79ed3;
+}
+
+.selected-btn {
+  background: var(--clr-accent-dark);
 }

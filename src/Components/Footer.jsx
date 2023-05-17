@@ -1,6 +1,6 @@
 import React from "react";
-import tmdbLogo from "./assets/images/tmdb.png";
-import logo from "./assets/images/logo.png";
+import tmdbLogo from "../assets/images/tmdb.png";
+import logo from "../assets/images/logo.png";
 
 const Footer = () => {
   return (

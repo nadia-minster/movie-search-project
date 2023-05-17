@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { useGlobalContext } from "../context";
+import { useState } from "react";
+import { useGlobalContext } from "../../context";
 import HomeCTA from "./HomeCTA";
 import Form from "./Form";
 

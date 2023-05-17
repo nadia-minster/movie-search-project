@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { Outlet } from "react-router-dom";
 import { useLocation } from "react-router-dom";
-import { useGlobalContext } from "./context";
+import { useGlobalContext } from "../context";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
-import bg1 from "./assets/images/home-background.png";
-import bg2 from "./assets/images/res.png";
+import bg1 from "../assets/images/home-background.png";
+import bg2 from "../assets/images/res.png";
 
 const SharedLayout = () => {
   const { isOpen, setIsOpen } = useGlobalContext();

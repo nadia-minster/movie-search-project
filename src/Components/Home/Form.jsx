@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import useGetGenre from "../hooks/useGetGenre";
+import useGetGenre from "../../hooks/useGetGenre";
 import { useNavigate } from "react-router-dom";
 import { FaArrowRight } from "react-icons/fa";
 

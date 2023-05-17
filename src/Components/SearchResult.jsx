@@ -1,8 +1,7 @@
-import { useState } from "react";
 import useGetMovie from "../hooks/useGetMovie";
 import { useGlobalContext } from "../context";
-import MovieCard from "../MovieCard";
-import SkeletonLoad from "../SkeletonLoad";
+import MovieCard from "./MovieCard";
+import SkeletonLoad from "./SkeletonLoad";
 
 const SearchResult = () => {
   const { year, genre, genreName } = useGlobalContext();
@@ -11,7 +10,7 @@ const SearchResult = () => {
   console.log(loading);
 
   return (
-    <div className="result-page">
+    <div className="container-page">
       <div className="result-heading">
         <h2>{`Here are TOP 3 ${genreName} movies from ${year}.`}</h2>
         <h3>

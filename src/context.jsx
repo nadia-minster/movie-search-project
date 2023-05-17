@@ -9,6 +9,7 @@ const AppContext = ({ children }) => {
   const [genreName, setGenreName] = useState("Action");
   const [isOpen, setIsOpen] = useState(false);
   const [savedMovie, setSavedMovie] = useState([]);
+  const [watched, setWatched] = useState([]);
 
   useEffect(() => {
     const savedMovies = localStorage.getItem("savedMovies");
@@ -30,6 +31,8 @@ const AppContext = ({ children }) => {
         setIsOpen,
         savedMovie,
         setSavedMovie,
+        watched,
+        setWatched,
       }}
     >
       {children}

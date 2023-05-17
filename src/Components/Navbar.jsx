@@ -2,7 +2,7 @@ import React from "react";
 import { useMediaQuery } from "react-responsive";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { Link } from "react-router-dom";
-import logo from "./assets/images/logo.png";
+import logo from "../assets/images/logo.png";
 
 const Navbar = ({ isOpen, setIsOpen }) => {
   const isMobile = useMediaQuery({ query: "(max-width: 768px)" });

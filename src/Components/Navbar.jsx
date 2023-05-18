@@ -45,7 +45,9 @@ const Navbar = ({ isOpen, setIsOpen }) => {
               <FaTimes className="icon" />
             )}
           </div>
-          <div className="mobile-menu">{navigation}</div>
+          <div className={`mobile-menu ${isOpen && "mobile-menu-active"}`}>
+            {navigation}
+          </div>
         </div>
       )}
     </section>

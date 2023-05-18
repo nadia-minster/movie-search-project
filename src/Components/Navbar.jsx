@@ -19,7 +19,9 @@ const Navbar = ({ isOpen, setIsOpen }) => {
     <nav className={NavigationStyling()}>
       <ul>
         <li>About Us</li>
-        <li>Contact</li>
+        <li>
+          <Link to="/watched">Rate</Link>
+        </li>
         <Link className="btn" to="/saved">
           Saved Movies
         </Link>

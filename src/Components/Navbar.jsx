@@ -30,7 +30,7 @@ const Navbar = ({ isOpen, setIsOpen }) => {
         <Link to="/watched" className="link-element" onClick={closeNavigation}>
           Rated Movies
         </Link>
-        <Link className="btn" to="/saved" onClick={closeNavigation}>
+        <Link className="btn" to="/saved" onClick={closeNavigation} s>
           Saved Movies
         </Link>
       </ul>

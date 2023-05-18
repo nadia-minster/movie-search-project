@@ -208,6 +208,14 @@ body {
   padding: 0 clamp(1rem, 5%, 3rem);
 }
 
+.home-main h3 {
+  font-size: 32px;
+  line-height: 38px;
+  font-weight: 600;
+  color: #ffffff;
+  max-width: 400px;
+}
+
 h1,
 h2,
 h3,
@@ -315,10 +323,11 @@ p {
 }
 
 .form-input:focus {
-  outline: 2px solid var(--clr-accent);
+  outline: none;
 }
+
 label {
-  margin-bottom: -35px;
+  margin-bottom: -40px;
 }
 
 select {
@@ -360,13 +369,16 @@ select {
 .single-movie {
   position: relative;
   display: flex;
-  width: 100%;
+  width: 80%;
   display: flex;
   padding: 24px;
   margin-top: 36px;
-  gap: 24px;
   border-radius: 24px;
   box-shadow: 0px 8px 30px var(--clr-light);
+}
+
+.image-and-info {
+  z-index: 5;
 }
 
 .backdrop {
@@ -380,9 +392,10 @@ select {
   opacity: 0.15;
 }
 .movie-poster {
-  height: 300px;
+  height: 400px;
   object-fit: contain;
-  z-index: 5;
+  margin-right: 24px;
+  border-radius: 10px;
 }
 
 .single-movie-p {
@@ -414,7 +427,11 @@ select {
 
 .single-movie-text {
   z-index: 5;
-  width: 50%;
+  width: 100%;
+}
+
+.info {
+  width: 80%;
 }
 
 @media screen and (max-width: 600px) {
@@ -423,16 +440,28 @@ select {
     align-items: center;
     width: 100%;
   }
+  .movie-poster {
+    height: 300px;
+    margin-bottom: 12px;
+  }
 
+  .image-and-info {
+    display: flex;
+    gap: 24px;
+  }
+
+  .info {
+    align-self: end;
+    width: 100%;
+    margin-bottom: 12px;
+  }
   .single-movie-text {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-bottom: 32px;
+    width: 95%;
   }
-  .movie-poster {
-    width: 100%;
-  }
+
   .result-heading {
     flex-direction: column;
     gap: 24px;
@@ -447,12 +476,15 @@ select {
 }
 
 .tmdb {
-  width: 70px;
+  height: 15px;
+  opacity: 0.5;
 }
 .footer {
   display: flex;
   padding: 12px;
+  height: 9.05vh;
   align-items: center;
+  justify-content: center;
 }
 .footer p {
   font-weight: 500;

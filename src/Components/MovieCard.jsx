@@ -8,6 +8,7 @@ import RatingButtons from "./buttons/RatingButtons";
 const MovieCard = ({ movie, button }) => {
   const [imageLoading, setImageLoading] = useState(true);
   const imagePath = "https://image.tmdb.org/t/p/original";
+  console.log(movie);
 
   let displayButton = null;
   if (button === "save") {
@@ -49,13 +50,19 @@ const MovieCard = ({ movie, button }) => {
           alt={movie.title}
           src={`${imagePath}${movie.backdrop_path}`}
         />
-        <img
-          className="movie-poster"
-          src={`${imagePath}${movie.poster_path}`}
-        />
+        <div className="image-and-info">
+          <img
+            className="movie-poster"
+            src={`${imagePath}${movie.poster_path}`}
+          />
+          <div className="info">
+            <h5>IMDB rating: {movie.vote_average}</h5>
+            <h5>Release date: {movie.release_date}</h5>
+            <h3>{movie.title}</h3>
+          </div>
+        </div>
+
         <div className="single-movie-text">
-          <h5>IMDB rating: {movie.vote_average}</h5>
-          <h4>{movie.title}</h4>
           <p className="single-movie-p">{movie.overview}</p>
           <div className="buttons">{displayButton}</div>
         </div>

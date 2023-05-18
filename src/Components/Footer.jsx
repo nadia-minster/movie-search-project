@@ -1,11 +1,10 @@
 import React from "react";
-import tmdbLogo from "../assets/images/tmdb.png";
-import logo from "../assets/images/logo.png";
+import logo from "../assets/images/tmdblogo.svg";
 
 const Footer = () => {
   return (
     <div className="footer">
-      <img src={tmdbLogo} alt="the movie data base" className="tmdb" />
+      <img src={logo} alt="the movie data base" className="tmdb" />
     </div>
   );
 };

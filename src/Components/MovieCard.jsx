@@ -50,16 +50,16 @@ const MovieCard = ({ movie, button }) => {
           alt={movie.title}
           src={`${imagePath}${movie.backdrop_path}`}
         />
-        <div className="image-and-info">
-          <img
-            className="movie-poster"
-            src={`${imagePath}${movie.poster_path}`}
-          />
-          <div className="info">
-            <h5>IMDB rating: {movie.vote_average}</h5>
-            <h5>Release date: {movie.release_date}</h5>
-            <h3>{movie.title}</h3>
-          </div>
+
+        <img
+          className="movie-poster"
+          src={`${imagePath}${movie.poster_path}`}
+        />
+
+        <div className="info">
+          <h5>IMDB rating: {movie.vote_average}</h5>
+          <h5>Release date: {movie.release_date}</h5>
+          <h3 className="movie-title">{movie.title}</h3>
         </div>
 
         <div className="single-movie-text">

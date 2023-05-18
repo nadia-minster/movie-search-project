@@ -480,21 +480,18 @@ select {
   }
 }
 
-.tmdb {
-  height: 15px;
-  opacity: 0.5;
-}
 .footer {
   display: flex;
+  width: 100%;
   padding: 12px;
   height: 9.05vh;
   align-items: center;
   justify-content: center;
 }
-.footer p {
+.footer-text {
   font-weight: 500;
-  justify-self: center;
-  margin: 0 auto;
+  font-size: 14px;
+  width: fit-content;
 }
 
 /*//////////////////////PLACEHOLDER ////////////////////*/

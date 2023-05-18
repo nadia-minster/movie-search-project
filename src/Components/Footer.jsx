@@ -1,11 +1,11 @@
-import React from "react";
 import logo from "../assets/images/tmdblogo.svg";
 
 const Footer = () => {
+  const year = new Date().getFullYear();
   return (
-    <div className="footer">
-      <img src={logo} alt="the movie data base" className="tmdb" />
-    </div>
+    <footer className="footer">
+      <p className="footer-text">Nadia Minster {year}</p>
+    </footer>
   );
 };
 

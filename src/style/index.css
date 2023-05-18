@@ -548,3 +548,25 @@ h4 {
 .selected-btn {
   background: var(--clr-accent-dark);
 }
+
+/*//////////////////////PAGE ////////////////////*/
+
+.pagination {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  margin-top: 24px;
+  gap: 6px;
+}
+
+.page {
+  background: none;
+  font-size: 28px;
+  color: var(--clr-light);
+  transition: 0.3s ease;
+  cursor: pointer;
+}
+
+.page-active {
+  font-size: 36px;
+}

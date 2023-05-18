@@ -1,11 +1,17 @@
 import { useGlobalContext } from "../context";
-import MovieCard from "./MovieCard";
+import Pagination from "./Pagination";
 const Watched = () => {
   const { watched } = useGlobalContext();
-  const displayWatched = watched?.map((movie) => {
-    return <MovieCard movie={movie} key={movie.title} button={"rating"} />;
-  });
-  return <div className="container-page">{displayWatched}</div>;
+  const heading = "Rate Movies You Watched";
+  const subheading = "Explore and rate the movies you watched.";
+  return (
+    <Pagination
+      movies={watched}
+      heading={heading}
+      subheading={subheading}
+      button={"rating"}
+    />
+  );
 };
 
 export default Watched;

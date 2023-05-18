@@ -354,8 +354,8 @@ select {
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* background: url("./assets/images/res.png") no-repeat cover; */
-  padding: 50px clamp(1rem, 5%, 3rem);
+  padding-right: 30px;
+  padding-left: 15px;
 }
 
 .result-heading {
@@ -364,6 +364,7 @@ select {
   gap: 40px;
   align-items: center;
   padding: 0 36px;
+  margin-top: 40px;
 }
 
 .single-movie {
@@ -379,6 +380,13 @@ select {
 
 .image-and-info {
   z-index: 5;
+}
+
+.rating-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3px;
+  grid-area: d;
 }
 
 .backdrop {
@@ -410,7 +418,7 @@ select {
 .watch-delete-buttons {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 8px;
   width: 80%;
 }
 
@@ -439,10 +447,15 @@ select {
   z-index: 5;
 }
 
+.info-accent {
+  margin-left: 8px;
+  font-size: 17px;
+}
+
 @media screen and (max-width: 768px) {
   .single-movie {
     width: 100%;
-    grid-template-areas: "a b b" "c c c";
+    grid-template-areas: "a c c" "a b b" "b b b";
   }
   .movie-poster {
     height: 300px;
@@ -501,7 +514,10 @@ select {
 }
 .single-movie-placeholder {
   height: fit-content;
+  display: flex;
+  width: 80%;
   padding-bottom: 10px;
+  gap: 30px;
 }
 .poster-placeholder {
   height: 280px;
@@ -562,7 +578,10 @@ select {
   border-radius: 10px;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 768px) {
+  .single-movie-placeholder {
+    width: 100%;
+  }
   .placeholder-text {
     align-items: center;
   }
@@ -582,11 +601,7 @@ select {
 }
 
 /*//////////////////////RATING ////////////////////*/
-.rating-buttons {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 3px;
-}
+
 .rating-btn {
   border-radius: 35px;
   display: grid;
@@ -624,4 +639,45 @@ select {
 
 .page-active {
   font-size: 24px;
+}
+
+.btn-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  border-radius: 50%;
+}
+
+.about-page {
+  width: 100vw;
+  margin-left: 0;
+
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-right: 30px;
+  padding-left: 15px;
+}
+
+.about-text {
+  margin: 36px 85px;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.tmdb-logo {
+  margin-top: 36px;
+  width: 300px;
+}
+
+@media screen and (max-width: 768px) {
+  .about-text {
+    text-align: center;
+    margin: 36 0;
+    align-items: center;
+  }
 }

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import MovieCard from "./MovieCard";
+import { FaChevronRight, FaChevronLeft } from "react-icons/fa";
 
 const Pagination = ({ movies, heading, subheading, button }) => {
   const moviesPerPage = 5;
@@ -43,7 +44,7 @@ const Pagination = ({ movies, heading, subheading, button }) => {
           className="btn btn-page"
           onClick={() => handleDirections("left")}
         >
-          PREV
+          <FaChevronLeft />
         </button>
         {Array.from({ length: totalPages }, (_, index) => index + 1).map(
           (pageNumber) => (
@@ -62,7 +63,7 @@ const Pagination = ({ movies, heading, subheading, button }) => {
           className="btn btn-page"
           onClick={() => handleDirections("right")}
         >
-          NEXT
+          <FaChevronRight />
         </button>
       </div>
     </div>

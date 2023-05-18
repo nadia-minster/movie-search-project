@@ -57,8 +57,15 @@ const MovieCard = ({ movie, button }) => {
         />
 
         <div className="info">
-          <h5>IMDB rating: {movie.vote_average}</h5>
-          <h5>Release date: {movie.release_date}</h5>
+          <h4>
+            Rating: <span className="info-accent">{movie.vote_average}</span>
+          </h4>
+          <h4>
+            Release Year:
+            <span className="info-accent">
+              {movie.release_date.slice(0, 4)}
+            </span>
+          </h4>
           <h3 className="movie-title">{movie.title}</h3>
         </div>
 

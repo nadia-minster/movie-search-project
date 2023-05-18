@@ -18,10 +18,12 @@ const Navbar = ({ isOpen, setIsOpen }) => {
   const navigation = (
     <nav className={NavigationStyling()}>
       <ul>
-        <li>About Us</li>
-        <li>
-          <Link to="/watched">Rate</Link>
-        </li>
+        <Link to="/about" className="link-element">
+          About
+        </Link>
+        <Link to="/watched" className="link-element">
+          Rate
+        </Link>
         <Link className="btn" to="/saved">
           Saved Movies
         </Link>

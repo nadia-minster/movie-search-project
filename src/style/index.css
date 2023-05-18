@@ -97,12 +97,13 @@ body {
   gap: 24px;
 }
 
-.links ul li {
+.link-element {
   transition: var(--transition-short);
   cursor: pointer;
+  color: #fff;
 }
 
-.links ul li:hover {
+.link-element:hover {
   color: var(--clr-accent);
 }
 
@@ -153,7 +154,7 @@ body {
 
 .links-mobile {
   background: var(--clr-dark-purple);
-  background-image: url("./assets/images/res.png");
+  /* background: url("./assets/images/res.png") cover; */
   transition: var(--transition-long);
   clip-path: circle(0px at 84.75% 6.5%);
   display: flex;
@@ -184,12 +185,12 @@ body {
   opacity: 1;
 }
 
-.links-active ul li {
+.link-element {
   transition: var(--transition-short);
   cursor: pointer;
 }
-.links-active ul li:hover {
-  transform: scale(1.1);
+.link-element:hover {
+  transform: scale(1.05);
   color: var(--clr-accent);
 }
 
@@ -358,6 +359,7 @@ select {
 
 .single-movie {
   position: relative;
+  display: flex;
   width: 80%;
   display: flex;
   padding: 24px;
@@ -389,20 +391,30 @@ select {
   flex-grow: 1;
 }
 
-.buttons {
+.watch-delete-buttons {
   display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  width: 80%;
+}
+
+.buttons {
   width: 100%;
   height: 100px;
   margin-top: 10px;
   z-index: 5;
 }
 .btn-result {
-  margin-left: 10px;
   height: 40px;
+  padding: 0 2em;
+  display: flex;
+  align-items: center;
+  gap: 5px;
 }
 
 .single-movie-text {
   z-index: 5;
+  width: 50%;
 }
 
 @media screen and (max-width: 600px) {

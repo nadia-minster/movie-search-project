@@ -16,7 +16,7 @@ const MovieCard = ({ movie, button }) => {
     displayButton = <RatingButtons movie={movie} />;
   } else if (button === "watch-or-delete") {
     displayButton = (
-      <div>
+      <div className="watch-delete-buttons">
         <WatchedButton movie={movie} />
         <DeleteButton movie={movie} />
       </div>

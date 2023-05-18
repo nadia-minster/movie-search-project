@@ -4,7 +4,7 @@ import { FaHeart } from "react-icons/fa";
 import { FaCheck } from "react-icons/fa";
 
 const SaveMovieButton = ({ movie }) => {
-  const [icon, setIcon] = useState(<FaHeart />);
+  const [icon, setIcon] = useState(<FaHeart className="button-icon" />);
   const { setSavedMovie, savedMovie } = useGlobalContext();
   const handleSave = () => {
     if (!savedMovie.some((saved) => saved.title === movie.title)) {

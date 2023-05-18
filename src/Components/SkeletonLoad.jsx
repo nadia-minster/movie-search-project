@@ -1,5 +1,5 @@
 const SkeletonLoad = () => {
-  const placeholders = Array.from({ length: 5 }, (_, index) => index + 1);
+  const placeholders = Array.from({ length: 4 }, (_, index) => index + 1);
   return (
     <div className="single-movie single-movie-placeholder">
       <div className="placeholder movie-poster poster-placeholder" />

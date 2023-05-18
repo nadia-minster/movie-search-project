@@ -15,16 +15,22 @@ const Navbar = ({ isOpen, setIsOpen }) => {
     } else return "links";
   };
 
+  const closeNavigation = () => {
+    if (isMobile && isOpen) {
+      setIsOpen(false);
+    }
+  };
+
   const navigation = (
     <nav className={NavigationStyling()}>
       <ul>
-        <Link to="/about" className="link-element">
+        <Link to="/about" className="link-element" onClick={closeNavigation}>
           About
         </Link>
-        <Link to="/watched" className="link-element">
-          Rate
+        <Link to="/watched" className="link-element" onClick={closeNavigation}>
+          Rated Movies
         </Link>
-        <Link className="btn" to="/saved">
+        <Link className="btn" to="/saved" onClick={closeNavigation}>
           Saved Movies
         </Link>
       </ul>

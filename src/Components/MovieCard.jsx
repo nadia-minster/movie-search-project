@@ -77,12 +77,12 @@ const MovieCard = ({ movie, button }) => {
               </span>
             </h4>
             <h3 className="movie-title">{movie.title}</h3>
-            <div className="buttons">{displayButton}</div>
           </div>
         </div>
 
         <div className="single-movie-text">
           <p className="single-movie-p">{movie.overview}</p>
+          <div className="buttons">{displayButton}</div>
         </div>
       </div>
     );

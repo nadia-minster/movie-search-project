@@ -1,12 +1,13 @@
 import React, { useState } from "react";
-import useGetGenre from "../../hooks/useGetGenre";
-import { useNavigate } from "react-router-dom";
 import { FaArrowRight } from "react-icons/fa";
+import { useGlobalContext } from "../../context";
+import { useNavigate } from "react-router-dom";
 
 const Form = (props) => {
   const [decade, setDecade] = useState("1990");
+  const { genres, handleRandomChoice } = useGlobalContext();
+
   const navigate = useNavigate();
-  const { genres } = useGetGenre();
 
   const selectGenres = genres?.map((genre) => {
     return (
@@ -49,14 +50,6 @@ const Form = (props) => {
     props.setGenre(e.target.value);
     const name = genres.filter((item) => item.id.toString() === e.target.value);
     props.setGenreName(name[0].name);
-  };
-
-  const handleRandomChoice = () => {
-    props.setYear(1900 + Math.floor(Math.random() * 123));
-    const randomGenreIndex = Math.floor(Math.random() * 19);
-    props.setGenre(genres[randomGenreIndex].id);
-    props.setGenreName(genres[randomGenreIndex].name);
-    return navigate("/result");
   };
 
   const handleClick = () => {

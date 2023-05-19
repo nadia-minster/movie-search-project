@@ -354,6 +354,7 @@ select {
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding-bottom: 50px;
   padding-right: 30px;
   padding-left: 15px;
 }
@@ -365,6 +366,20 @@ select {
   align-items: center;
   padding: 0 36px;
   margin-top: 40px;
+}
+
+.btn-refresh {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.result-secondary-heading {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: center;
 }
 
 .single-movie {
@@ -439,6 +454,15 @@ select {
 .single-movie-text {
   z-index: 5;
   width: 100%;
+}
+
+.no-movies {
+  width: 100%;
+  margin-top: 250px;
+  gap: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .info {
@@ -652,8 +676,8 @@ select {
 .about-page {
   width: 100vw;
   margin-left: 0;
-
   height: fit-content;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;

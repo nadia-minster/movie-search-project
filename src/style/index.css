@@ -482,6 +482,7 @@ select {
   .single-movie {
     width: 100%;
     grid-template-areas: "a c c c" "b b b b";
+    grid-row-gap: 0px;
     padding: 20px;
   }
   .movie-poster {

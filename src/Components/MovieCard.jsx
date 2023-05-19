@@ -61,12 +61,11 @@ const MovieCard = ({ movie, button }) => {
           alt={movie.title}
           src={`${imagePath}${movie.backdrop_path}`}
         />
-
-        <img
-          className="movie-poster"
-          src={`${imagePath}${movie.poster_path}`}
-        />
-        <div className="info-wrapper">
+        <div className="poster-info">
+          <img
+            className="movie-poster"
+            src={`${imagePath}${movie.poster_path}`}
+          />
           <div className="info">
             <h4>
               Rating: <span className="info-accent">{movie.vote_average}</span>
@@ -78,12 +77,12 @@ const MovieCard = ({ movie, button }) => {
               </span>
             </h4>
             <h3 className="movie-title">{movie.title}</h3>
-          </div>
-
-          <div className="single-movie-text">
-            <p className="single-movie-p">{movie.overview}</p>
             <div className="buttons">{displayButton}</div>
           </div>
+        </div>
+
+        <div className="single-movie-text">
+          <p className="single-movie-p">{movie.overview}</p>
         </div>
       </div>
     );

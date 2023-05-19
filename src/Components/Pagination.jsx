@@ -5,10 +5,21 @@ import { FaChevronRight, FaChevronLeft } from "react-icons/fa";
 const Pagination = ({ movies, heading, subheading, button }) => {
   const moviesPerPage = 5;
   const [currentPage, setCurrentPage] = useState(1);
-
+  let sortedMovies = movies.sort((a, b) => {
+    if (a.myRating && !b.myRating) {
+      return 1;
+    } else if (!a.myRating && b.myRating) {
+      return -1;
+    } else {
+      return b.myRating - a.myRating;
+    }
+  });
   const indexOfLastMovie = currentPage * moviesPerPage;
   const indexOfFirstMovie = indexOfLastMovie - moviesPerPage;
-  const currentMovies = movies?.slice(indexOfFirstMovie, indexOfLastMovie);
+  const currentMovies = sortedMovies?.slice(
+    indexOfFirstMovie,
+    indexOfLastMovie
+  );
   const totalPages = Math.ceil(movies?.length / moviesPerPage);
 
   const handlePageChange = (pageNumber) => {

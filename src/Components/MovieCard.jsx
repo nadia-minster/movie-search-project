@@ -10,7 +10,6 @@ const MovieCard = ({ movie, button }) => {
   const [imageLoading, setImageLoading] = useState(true);
   const [loadingError, setLoadingError] = useState(false);
   const imagePath = "https://image.tmdb.org/t/p/original";
-  console.log(movie);
 
   let displayButton = null;
   if (button === "save") {

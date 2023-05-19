@@ -3,7 +3,7 @@ import MovieCard from "./MovieCard";
 import { FaChevronRight, FaChevronLeft } from "react-icons/fa";
 
 const Pagination = ({ movies, heading, subheading, button }) => {
-  const moviesPerPage = 5;
+  const moviesPerPage = 3;
   const [currentPage, setCurrentPage] = useState(1);
   let sortedMovies = movies.sort((a, b) => {
     if (a.myRating && !b.myRating) {

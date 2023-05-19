@@ -424,10 +424,8 @@ select {
 }
 
 .single-movie-p {
-  grid-area: b;
   font-size: 1rem;
   width: 100%;
-  flex-grow: 1;
 }
 
 .watch-delete-buttons {
@@ -452,6 +450,7 @@ select {
 }
 
 .single-movie-text {
+  grid-area: b;
   z-index: 5;
   width: 100%;
 }
@@ -479,28 +478,16 @@ select {
 @media screen and (max-width: 768px) {
   .single-movie {
     width: 100%;
-    grid-template-areas: "a c c" "a b b" "b b b";
+    grid-template-areas: "a b b" "c b b";
   }
   .movie-poster {
     height: 300px;
-    margin-bottom: 12px;
+    margin-right: 0;
   }
-
-  .image-and-info {
-    display: flex;
-    gap: 24px;
-  }
-
   .info {
-    align-self: end;
     width: 100%;
     margin-bottom: 12px;
-  }
-  .single-movie-text {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 95%;
+    margin-top: 12px;
   }
 
   .result-heading {

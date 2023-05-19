@@ -405,6 +405,12 @@ select {
   grid-area: d;
 }
 
+.info-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
 .backdrop {
   width: 100%;
   height: 100%;
@@ -481,7 +487,7 @@ select {
 @media screen and (max-width: 768px) {
   .single-movie {
     width: 100%;
-    grid-template-areas: "a c c c" "b b b b";
+    grid-template-areas: "a c c " "a b b";
     grid-row-gap: 0px;
     padding: 20px;
   }

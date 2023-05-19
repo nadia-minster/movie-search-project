@@ -66,23 +66,24 @@ const MovieCard = ({ movie, button }) => {
           className="movie-poster"
           src={`${imagePath}${movie.poster_path}`}
         />
+        <div className="info-wrapper">
+          <div className="info">
+            <h4>
+              Rating: <span className="info-accent">{movie.vote_average}</span>
+            </h4>
+            <h4>
+              Release Year:
+              <span className="info-accent">
+                {movie.release_date.slice(0, 4)}
+              </span>
+            </h4>
+            <h3 className="movie-title">{movie.title}</h3>
+          </div>
 
-        <div className="info">
-          <h4>
-            Rating: <span className="info-accent">{movie.vote_average}</span>
-          </h4>
-          <h4>
-            Release Year:
-            <span className="info-accent">
-              {movie.release_date.slice(0, 4)}
-            </span>
-          </h4>
-          <h3 className="movie-title">{movie.title}</h3>
-        </div>
-
-        <div className="single-movie-text">
-          <p className="single-movie-p">{movie.overview}</p>
-          <div className="buttons">{displayButton}</div>
+          <div className="single-movie-text">
+            <p className="single-movie-p">{movie.overview}</p>
+            <div className="buttons">{displayButton}</div>
+          </div>
         </div>
       </div>
     );

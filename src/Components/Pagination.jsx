@@ -1,6 +1,7 @@
 import { useState } from "react";
 import MovieCard from "./MovieCard";
 import { FaChevronRight, FaChevronLeft } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const Pagination = ({ movies, heading, subheading, button }) => {
   const moviesPerPage = 3;
@@ -38,6 +39,21 @@ const Pagination = ({ movies, heading, subheading, button }) => {
       } else setCurrentPage(currentPage + 1);
     }
   };
+
+  if (sortedMovies.length === 0) {
+    return (
+      <div className="container-page">
+        <div className="result-heading" style={{ "margin-top": 200 }}>
+          <h2>You haven't saved any movies yet</h2>
+          <h3>Check out our search, and find your perfect movie</h3>
+        </div>
+        <Link to="/" className="btn btn-result" style={{ "margin-top": 36 }}>
+          Home
+        </Link>
+        <div></div>
+      </div>
+    );
+  }
 
   return (
     <div className="container-page">

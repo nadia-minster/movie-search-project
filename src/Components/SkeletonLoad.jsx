@@ -6,6 +6,7 @@ const SkeletonLoad = () => {
       <div className="placeholder-text">
         <div className="placeholder rating-placeholder"></div>
         <h4 className="placeholder  title-placeholder-main"></h4>
+
         <div className="description-placeholder">
           {placeholders.map((placeholder) => (
             <div

@@ -5,6 +5,7 @@ import SaveMovieButton from "./buttons/SaveMovieButton";
 import DeleteButton from "./buttons/DeleteButton";
 import WatchedButton from "./buttons/WatchedButton";
 import RatingButtons from "./buttons/RatingButtons";
+import DeleteWatched from "./buttons/DeleteWatched";
 
 const MovieCard = ({ movie, button }) => {
   const [imageLoading, setImageLoading] = useState(true);
@@ -15,7 +16,12 @@ const MovieCard = ({ movie, button }) => {
   if (button === "save") {
     displayButton = <SaveMovieButton movie={movie} />;
   } else if (button === "rating") {
-    displayButton = <RatingButtons movie={movie} />;
+    displayButton = (
+      <div className="rate-delete">
+        <RatingButtons movie={movie} />
+        <DeleteWatched movie={movie} />
+      </div>
+    );
   } else if (button === "watch-or-delete") {
     displayButton = (
       <div className="watch-delete-buttons">

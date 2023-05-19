@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import SkeletonLoad from "./SkeletonLoad";
+import NoPoster from "./NoPoster";
 import SaveMovieButton from "./buttons/SaveMovieButton";
 import DeleteButton from "./buttons/DeleteButton";
 import WatchedButton from "./buttons/WatchedButton";
@@ -7,6 +8,7 @@ import RatingButtons from "./buttons/RatingButtons";
 
 const MovieCard = ({ movie, button }) => {
   const [imageLoading, setImageLoading] = useState(true);
+  const [loadingError, setLoadingError] = useState(false);
   const imagePath = "https://image.tmdb.org/t/p/original";
   console.log(movie);
 
@@ -30,15 +32,24 @@ const MovieCard = ({ movie, button }) => {
     backdropImage.onload = () => {
       setImageLoading(false);
     };
+    backdropImage.onerror = () => {
+      setLoadingError(true);
+    };
 
     const posterImage = new Image();
     posterImage.src = `${imagePath}${movie.poster_path}`;
     posterImage.onload = () => {
       setImageLoading(false);
     };
+    posterImage.onerror = () => {
+      setLoadingError(true);
+    };
   }, [imagePath, movie.backdrop_path, movie.poster_path]);
 
   const renderContent = () => {
+    if (loadingError) {
+      return <NoPoster movie={movie} displayButton={displayButton} />;
+    }
     if (imageLoading) {
       return <SkeletonLoad />;
     }

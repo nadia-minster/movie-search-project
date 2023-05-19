@@ -14,7 +14,9 @@ const SearchResult = () => {
       {!loading && movies.length === 0 ? (
         <div className="no-movies">
           <h2>No Movies to display</h2>
-          <button className="btn">Try Again</button>
+          <button className="btn" onClick={handleRandomChoice}>
+            Try Again
+          </button>
         </div>
       ) : (
         <div className="result-heading">

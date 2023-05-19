@@ -478,16 +478,28 @@ select {
 @media screen and (max-width: 768px) {
   .single-movie {
     width: 100%;
-    grid-template-areas: "a b b" "c b b";
+    grid-template-areas: "a c c" "b b b";
   }
   .movie-poster {
     height: 300px;
-    margin-right: 0;
+    margin-right: 30px;
+  }
+
+  .single-movie-text {
+    margin: 10px 5px;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
   }
   .info {
-    width: 100%;
-    margin-bottom: 12px;
-    margin-top: 12px;
+    margin: 12px 0;
+  }
+
+  .buttons {
+    width: fit-content;
+    height: fit-content;
   }
 
   .result-heading {
@@ -501,6 +513,27 @@ select {
   }
   .movie-title {
     text-align: start;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .container-page {
+    padding-left: 30px;
+  }
+  .movie-poster {
+    height: 230px;
+    margin-right: 5px;
+  }
+  h3 {
+    font-size: 24px;
+    line-height: 24px;
+  }
+  .info {
+    width: 100%;
+    align-self: center;
+  }
+  .result-heading {
+    width: 100%;
   }
 }
 
@@ -592,13 +625,6 @@ select {
 @media screen and (max-width: 768px) {
   .single-movie-placeholder {
     width: 100%;
-  }
-  .placeholder-text {
-    align-items: center;
-  }
-  .description-placeholder {
-    flex-direction: column;
-    align-items: center;
   }
 }
 

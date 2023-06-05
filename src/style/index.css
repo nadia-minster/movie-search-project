@@ -407,6 +407,22 @@ select {
   gap: 16px;
 }
 
+.single-movie-desktop {
+  z-index: 2;
+  display: flex;
+}
+
+.single-movie-mobile {
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+}
+.poster-info-mobile {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
 .backdrop {
   width: 100%;
   height: 100%;

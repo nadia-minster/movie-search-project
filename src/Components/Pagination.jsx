@@ -73,19 +73,21 @@ const Pagination = ({ movies, heading, subheading, button }) => {
         >
           <FaChevronLeft />
         </button>
-        {Array.from({ length: totalPages }, (_, index) => index + 1).map(
-          (pageNumber) => (
-            <button
-              key={pageNumber}
-              onClick={() => handlePageChange(pageNumber)}
-              className={
-                pageNumber === currentPage ? "page page-active" : "page"
-              }
-            >
-              {pageNumber}
-            </button>
-          )
-        )}
+        <div className="pages">
+          {Array.from({ length: totalPages }, (_, index) => index + 1).map(
+            (pageNumber) => (
+              <button
+                key={pageNumber}
+                onClick={() => handlePageChange(pageNumber)}
+                className={
+                  pageNumber === currentPage ? "page page-active" : "page"
+                }
+              >
+                {pageNumber}
+              </button>
+            )
+          )}
+        </div>
         <button
           className="btn btn-page"
           onClick={() => handleDirections("right")}

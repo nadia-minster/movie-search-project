@@ -6,10 +6,12 @@ import DeleteButton from "./buttons/DeleteButton";
 import WatchedButton from "./buttons/WatchedButton";
 import RatingButtons from "./buttons/RatingButtons";
 import DeleteWatched from "./buttons/DeleteWatched";
+import { useMediaQuery } from "react-responsive";
 
 const MovieCard = ({ movie, button }) => {
   const [imageLoading, setImageLoading] = useState(true);
   const [loadingError, setLoadingError] = useState(false);
+  const isMobile = useMediaQuery({ maxWidth: 767 });
   const imagePath = "https://image.tmdb.org/t/p/original";
 
   let displayButton = null;
@@ -66,29 +68,61 @@ const MovieCard = ({ movie, button }) => {
           alt={movie.title}
           src={`${imagePath}${movie.backdrop_path}`}
         />
-        <div className="poster-info">
-          <img
-            className="movie-poster"
-            src={`${imagePath}${movie.poster_path}`}
-          />
-          <div className="info">
-            <h4>
-              Rating: <span className="info-accent">{movie.vote_average}</span>
-            </h4>
-            <h4>
-              Release Year:
-              <span className="info-accent">
-                {movie.release_date.slice(0, 4)}
-              </span>
-            </h4>
-            <h3 className="movie-title">{movie.title}</h3>
-          </div>
-        </div>
+        {!isMobile ? (
+          <div className="single-movie-desktop">
+            <img
+              className="movie-poster"
+              src={`${imagePath}${movie.poster_path}`}
+            />
+            <div className="poster-info">
+              <div className="info">
+                <h4>
+                  Rating:
+                  <span className="info-accent">{movie.vote_average}</span>
+                </h4>
+                <h4>
+                  Release Year:
+                  <span className="info-accent">
+                    {movie.release_date.slice(0, 4)}
+                  </span>
+                </h4>
+                <h3 className="movie-title">{movie.title}</h3>
+              </div>
 
-        <div className="single-movie-text">
-          <p className="single-movie-p">{movie.overview}</p>
-          <div className="buttons">{displayButton}</div>
-        </div>
+              <div className="single-movie-text">
+                <p className="single-movie-p">{movie.overview}</p>
+                <div className="buttons">{displayButton}</div>
+              </div>
+            </div>
+          </div>
+        ) : (
+          <div className="single-movie-mobile">
+            <div className="poster-info-mobile">
+              <img
+                className="movie-poster"
+                src={`${imagePath}${movie.poster_path}`}
+              />
+              <div className="info">
+                <h4>
+                  Rating:
+                  <span className="info-accent">{movie.vote_average}</span>
+                </h4>
+                <h4>
+                  Release Year:
+                  <span className="info-accent">
+                    {movie.release_date.slice(0, 4)}
+                  </span>
+                </h4>
+                <h3 className="movie-title">{movie.title}</h3>
+                <div className="buttons">{displayButton}</div>
+              </div>
+            </div>
+
+            <div className="single-movie-text">
+              <p className="single-movie-p">{movie.overview}</p>
+            </div>
+          </div>
+        )}
       </div>
     );
   };

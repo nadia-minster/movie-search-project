@@ -420,7 +420,7 @@ select {
 .poster-info-mobile {
   display: flex;
   align-items: center;
-  gap: 24px;
+  gap: 15px;
 }
 
 .backdrop {
@@ -453,6 +453,12 @@ select {
   width: 80%;
 }
 
+@media screen and (max-width: 768px) {
+  .watch-delete-buttons {
+    flex-wrap: nowrap;
+  }
+}
+
 .rate-delete {
   display: flex;
   flex-direction: column;
@@ -471,6 +477,10 @@ select {
   display: flex;
   align-items: center;
   gap: 5px;
+}
+
+.mobile-btn-result {
+  padding: 0 1em;
 }
 
 .single-movie-text {
@@ -555,7 +565,7 @@ select {
     width: 100%;
   }
   .single-movie-p {
-    width: 100%;
+    width: 90%;
   }
 }
 

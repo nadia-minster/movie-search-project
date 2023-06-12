@@ -2,9 +2,11 @@ import { FaEye } from "react-icons/fa";
 import { useEffect } from "react";
 import { useGlobalContext } from "../../context";
 import { useNavigate } from "react-router-dom";
+import { useMediaQuery } from "react-responsive";
 
 const WatchedButton = ({ movie }) => {
   const { setWatched, watched, setSavedMovie, savedMovie } = useGlobalContext();
+  const isMobile = useMediaQuery({ maxWidth: 767 });
 
   const navigate = useNavigate();
 
@@ -23,8 +25,11 @@ const WatchedButton = ({ movie }) => {
   };
 
   return (
-    <button className="btn btn-result" onClick={handleWatched}>
-      Watched
+    <button
+      className={`btn btn-result ${isMobile && "mobile-btn-result"}`}
+      onClick={handleWatched}
+    >
+      {!isMobile && "Watched"}
       <FaEye />
     </button>
   );

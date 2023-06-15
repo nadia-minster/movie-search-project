@@ -32,9 +32,9 @@ const SharedLayout = () => {
   return (
     <div
       style={{
-        backgroundImage: isImageLoaded ? `url(${backgroundImage})` : "",
-        backgroundColor: isImageLoaded ? "" : "#5215ff",
-        transition: " 0.5s ease-in-out",
+        background: isImageLoaded ? `url(${backgroundImage})` : "#5215ff",
+        opacity: isImageLoaded ? 1 : 0,
+        transition: "opacity 0.5s ease-in-out",
       }}
       className="shared-layout main"
     >

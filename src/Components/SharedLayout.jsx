@@ -16,8 +16,6 @@ const SharedLayout = () => {
   useEffect(() => {
     if (location.pathname === "/") {
       setBackgroundImage(bg1);
-    } else if (location.pathname === "/results") {
-      setBackgroundImage(bg2);
     } else {
       setBackgroundImage(bg2);
     }
@@ -33,7 +31,6 @@ const SharedLayout = () => {
     <div
       style={{
         background: isImageLoaded ? `url(${backgroundImage})` : "#5215ff",
-        transition: "background 0.5s ease-in-out",
       }}
       className="shared-layout main"
     >

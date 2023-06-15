@@ -10,6 +10,7 @@ import bg2 from "../assets/images/res.png";
 const SharedLayout = () => {
   const { isOpen, setIsOpen } = useGlobalContext();
   const [backgroundImage, setBackgroundImage] = useState(bg1);
+  const [isImageLoaded, setIsImageLoaded] = useState(false);
   const location = useLocation();
 
   useEffect(() => {
@@ -20,11 +21,21 @@ const SharedLayout = () => {
     } else {
       setBackgroundImage(bg2);
     }
-  }, [location]);
+
+    const img = new Image();
+    img.src = backgroundImage;
+    img.onload = () => {
+      setIsImageLoaded(true);
+    };
+  }, [location, backgroundImage]);
 
   return (
     <div
-      style={{ backgroundImage: `url(${backgroundImage})` }}
+      style={{
+        backgroundImage: isImageLoaded ? `url(${backgroundImage})` : "",
+        backgroundColor: isImageLoaded ? "" : "#5215ff",
+        transition: " 0.5s ease-in-out",
+      }}
       className="shared-layout main"
     >
       <Navbar isOpen={isOpen} setIsOpen={setIsOpen} />

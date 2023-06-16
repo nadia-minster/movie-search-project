@@ -29,13 +29,15 @@ const SharedLayout = () => {
     };
   }, [location, backgroundImage]);
 
+  const style = {
+    background: "#5215ff",
+    backgroundImage: `url(${backgroundImage})`,
+    opacity: isImageLoaded ? 1 : 0,
+    transition: "opacity 0.5s ease-in-out",
+  };
+
   return (
-    <div
-      style={{
-        background: isImageLoaded ? `url(${backgroundImage})` : "#5215ff",
-      }}
-      className="shared-layout main"
-    >
+    <div style={style} className="shared-layout main">
       <Navbar isOpen={isOpen} setIsOpen={setIsOpen} />
       <Outlet />
       <Footer />

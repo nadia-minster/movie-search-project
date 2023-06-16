@@ -14,10 +14,11 @@ const SharedLayout = () => {
   const location = useLocation();
 
   useEffect(() => {
+    setIsImageLoaded(false);
+
     if (location.pathname === "/") {
       setBackgroundImage(bg1);
     } else {
-      setIsImageLoaded(false);
       setBackgroundImage(bg2);
     }
 

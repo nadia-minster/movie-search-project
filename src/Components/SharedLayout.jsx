@@ -17,6 +17,7 @@ const SharedLayout = () => {
     if (location.pathname === "/") {
       setBackgroundImage(bg1);
     } else {
+      setIsImageLoaded(false);
       setBackgroundImage(bg2);
     }
 
